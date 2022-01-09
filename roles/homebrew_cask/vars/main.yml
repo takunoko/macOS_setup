@@ -1,0 +1,8 @@
+packages:
+  - { name: iterm2, state: present }
+  - { name: google-japanese-ime, state: present }
+  - { name: google-chrome, state: present }
+  - { name: firefox, state: present }
+  - { name: visual-studio-code, state: present }
+  - { name: slack, state: present }
+  - { name: postman, state: present }
