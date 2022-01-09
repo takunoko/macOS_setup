@@ -5,4 +5,16 @@ packages:
   - { name: firefox, state: present }
   - { name: visual-studio-code, state: present }
   - { name: slack, state: present }
+  - { name: google-cloud-sdk, state: present }  # google-cloud-sdk
+  - { name: unity-hub, state: present }
+    # 仕事以外(開発系)
   - { name: postman, state: present }
+  - { name: blender, state: present }
+  - { name: android-sdk, state: present }
+  - { name: rider, state: present }
+  - { name: inkscape, state: present }
+  - { name: arduino, state: present }
+    # 仕事以外(その他)
+  - { name: opera, state: present }
+  - { name: steam, state: present }
+  - { name: discord, state: present }

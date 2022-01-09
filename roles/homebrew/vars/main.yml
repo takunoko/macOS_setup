@@ -11,3 +11,22 @@ packages:
   - { name: vim, state: present }
   - { name: tree, state: present }
   - { name: openssl, state: present }
+  - { name: htop, state: present }
+  - { name: nvim, state: present }
+  - { name: gh, state: present }  # github cli
+  - { name: awscli, state: present } # aws cli
+    # unixコマンドのモダンな実装
+  - { name: bat, state: present } # cat
+  - { name: ripgrep, state: present } # grep
+  - { name: tig, state: present } # git
+  - { name: exa, state: present } # ls
+  - { name: lsd, state: present } # ls
+  - { name: dust, state: present } # du
+  - { name: duf, state: present } # df
+  - { name: broot, state: present } # tree
+  - { name: fd, state: present } # find
+  - { name: jq, state: present } # json parser
+  - { name: bottom, state: present } # top
+  - { name: gtop, state: present } # top
+  - { name: gping, state: present } # ping
+  - { name: httpie, state: present } # curl? http client

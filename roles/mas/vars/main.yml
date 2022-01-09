@@ -1,0 +1,11 @@
+apps:
+  - { name: "Keynote", id: "409183694" }
+  - { name: "Numbers", id: "409203825" }
+  - { name: "Pages", id: "409201541" }
+  - { name: "iMovie", id: "408981434" }
+  - { name: "Monosnap", id: "540348655" }
+  - { name: "Final Cut Pro", id: "424389933" }
+  - { name: "Compressor", id: "634148309" }
+  - { name: "Logic Pro", id: "634148309" }
+  - { name: "LINE", id: "539883307" }
+    
