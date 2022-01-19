@@ -7,6 +7,7 @@ packages:
   - { name: slack, state: present }
   - { name: google-cloud-sdk, state: present }  # google-cloud-sdk
   - { name: unity-hub, state: present }
+  - { name: docker, state: present }
     # 仕事以外(開発系)
   - { name: postman, state: present }
   - { name: blender, state: present }
