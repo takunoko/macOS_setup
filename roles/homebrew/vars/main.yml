@@ -13,10 +13,13 @@ packages:
   - { name: openssl, state: present }
   - { name: htop, state: present }
   - { name: nvim, state: present }
-  - { name: cowsay, state: present }
-  - { name: lolcat, state: present }
+  - { name: imagemagick, state: present }
   - { name: gh, state: present }  # github cli
   - { name: awscli, state: present } # aws cli
+    # あまり有用じゃない。。
+  - { name: sl, state: present }
+  - { name: cowsay, state: present }
+  - { name: lolcat, state: present }
     # unixコマンドのモダンな実装
   - { name: bat, state: present } # cat
   - { name: ripgrep, state: present } # grep
