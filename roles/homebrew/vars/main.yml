@@ -10,8 +10,10 @@ packages:
   - { name: wget, state: present }
   - { name: vim, state: present }
   - { name: tree, state: present }
+  - { name: telnet, state: present }
   - { name: openssl, state: present }
   - { name: htop, state: present }
+  - { name: tmux, state: present }
   - { name: nvim, state: present }
   - { name: imagemagick, state: present }
   - { name: gh, state: present }  # github cli
