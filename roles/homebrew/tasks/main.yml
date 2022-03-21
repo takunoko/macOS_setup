@@ -2,7 +2,7 @@
   - name: homebrew update/upgrade
     homebrew:
       update_homebrew: true
-      upgrade_all: yes
+      upgrade_all: no
 
   - name: homebrew tap
     homebrew_tap:
