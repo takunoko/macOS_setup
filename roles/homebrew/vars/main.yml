@@ -12,12 +12,19 @@ packages:
   - { name: tree, state: present }
   - { name: telnet, state: present }
   - { name: openssl, state: present }
-  - { name: htop, state: present }
   - { name: tmux, state: present }
-  - { name: nvim, state: present }
   - { name: imagemagick, state: present }
+  - { name: nvim, state: present }
+  - { name: sqlite3, state: present }
   - { name: gh, state: present }  # github cli
   - { name: awscli, state: present } # aws cli
+    # 追加コマンド
+  - { name: htop, state: present }
+  - { name: rename, state: present } # ファイル名変更に特化したコマンド
+  - { name: coreutils, state: present } # tacコマンド(出力行を反転させる)のために。。。
+    # GNU実装のコマンド類。
+  - { name: gawk, state: present } # GNU Awk(awkの亜種)。awkを実行してもgawkになる
+  - { name: gsed, state: present } # GNU Sed
     # あまり有用じゃない。。
   - { name: sl, state: present }
   - { name: cowsay, state: present }

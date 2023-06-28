@@ -18,3 +18,4 @@ packages:
   - { name: opera, state: present }
   - { name: steam, state: present }
   - { name: discord, state: present }
+  - { name: vlc, state: present }
