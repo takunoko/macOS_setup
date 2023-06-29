@@ -16,6 +16,7 @@ packages:
   - { name: imagemagick, state: present }
   - { name: nvim, state: present }
   - { name: sqlite3, state: present }
+  - { name: redis, state: present }
   - { name: gh, state: present }  # github cli
   - { name: awscli, state: present } # aws cli
     # 追加コマンド
