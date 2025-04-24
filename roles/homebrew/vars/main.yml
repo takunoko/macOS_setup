@@ -1,28 +1,32 @@
-taps:
-  - homebrew/cask
-  - homebrew/cask-versions
-  - homebrew/cask-fonts
-  - homebrew/core
+taps: []
 
 packages:
   - { name: zsh, state: present }
   - { name: git, state: present }
   - { name: wget, state: present }
-  - { name: vim, state: present }
   - { name: tree, state: present }
   - { name: telnet, state: present }
   - { name: openssl, state: present }
   - { name: tmux, state: present }
   - { name: imagemagick, state: present }
+  - { name: vim, state: present }
   - { name: nvim, state: present }
-  - { name: sqlite3, state: present }
-  - { name: redis, state: present }
   - { name: gh, state: present }  # github cli
   - { name: awscli, state: present } # aws cli
+  - { name: ansible, state: present }
+  - { name: asdf, state: present}
+  - { name: nodenv, state: present}
+  - { name: mas, state: present } # App Store のアプリのインストール
+    # 開発言語
+  - { name: go, state: present}
+  - { name: perl, state: present}
+  - { name: sqlite3, state: present }
+  - { name: mysql, state: present }
+  - { name: redis, state: present }
     # 追加コマンド
-  - { name: htop, state: present }
   - { name: rename, state: present } # ファイル名変更に特化したコマンド
   - { name: coreutils, state: present } # tacコマンド(出力行を反転させる)のために。。。
+  - { name: fastfetch, state: present} # システム情報を表示するコマンド
     # GNU実装のコマンド類。
   - { name: gawk, state: present } # GNU Awk(awkの亜種)。awkを実行してもgawkになる
   - { name: gsed, state: present } # GNU Sed
@@ -30,18 +34,21 @@ packages:
   - { name: sl, state: present }
   - { name: cowsay, state: present }
   - { name: lolcat, state: present }
+  - { name: toilet, state: present }
     # unixコマンドのモダンな実装
   - { name: bat, state: present } # cat
   - { name: ripgrep, state: present } # grep
   - { name: tig, state: present } # git
-  - { name: exa, state: present } # ls
+  - { name: eza, state: present } # ls
   - { name: lsd, state: present } # ls
   - { name: dust, state: present } # du
   - { name: duf, state: present } # df
   - { name: broot, state: present } # tree
   - { name: fd, state: present } # find
   - { name: jq, state: present } # json parser
+  - { name: yq, state: present } # yaml parser
   - { name: bottom, state: present } # top
   - { name: gtop, state: present } # top
+  - { name: htop, state: present } # top
   - { name: gping, state: present } # ping
   - { name: httpie, state: present } # curl? http client
