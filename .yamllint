@@ -1,0 +1,9 @@
+extends: default
+
+ignore: |
+  .tmp/
+
+rules:
+  document-start: disable
+  line-length: disable
+  truthy: disable
