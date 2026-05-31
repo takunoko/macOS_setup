@@ -1,0 +1,15 @@
+extends: default
+
+ignore: |
+  .tmp/
+
+rules:
+  braces: disable
+  comments: disable
+  comments-indentation: disable
+  document-start: disable
+  empty-lines: disable
+  indentation: disable
+  line-length: disable
+  trailing-spaces: disable
+  truthy: disable
