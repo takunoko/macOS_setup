@@ -68,14 +68,23 @@ pbcopy < "$HOME/.ssh/id_ed25519.pub"
 
 ## セットアップ実行
 
+通常のセットアップでは、Homebrew と Homebrew Cask の対象をインストールします。
+
 ```sh
 git clone git@github.com:takunoko/macOS_setup.git
 cd macOS_setup
 ansible-playbook setup.yml -i inventory
 ```
 
+App Store アプリは、App Store にサインインしたあとで明示的に実行します。
+
+```sh
+ansible-playbook setup.yml -i inventory --tags mas
+```
+
 ## 補足
 
 - App Store アプリのインストールは `mas` を使います
+- `mas` の処理はデフォルトでは実行されません
 - `mas` の処理を通すには、App Store サインイン済みであることが必要です
 - インストール対象の一覧は `roles/*/vars/main.yml` で管理しています

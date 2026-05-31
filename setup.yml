@@ -9,4 +9,7 @@
   roles:
     - homebrew
     - homebrew_cask
-    - mas
+    - role: mas
+      tags:
+        - never
+        - mas
