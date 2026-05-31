@@ -1,47 +1,81 @@
-# Setup Mac OS
+# macOS Setup
 
-# Install Xcode
-```
+Ansible を使って、macOS の開発環境をまとめてセットアップするためのリポジトリです。
+
+## 何をするか
+
+- Homebrew パッケージのインストール
+- Homebrew Cask アプリのインストール
+- Mac App Store アプリのインストール
+
+実行対象はローカルマシンのみです。
+
+## 前提
+
+- macOS を使用していること
+- App Store から入れるアプリを使う場合は、事前に App Store にサインインしておくこと
+- GitHub から clone するための SSH キーを用意すること
+
+## 事前準備
+
+### 1. Xcode Command Line Tools をインストール
+
+```sh
 xcode-select --install
 ```
 
-# Install HomeBrew
-公式サイト: https://brew.sh/index_ja
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/takunoko/.zprofile
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-Xcodeが入ってなかったら勝手に入るみたい
-一旦、Ansibleのインスコに使いたいので環境変数なども登録しておく
+### 2. Homebrew をインストール
 
-# create ssh-key
+公式サイト: [https://brew.sh/ja/](https://brew.sh/ja/)
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+`brew shellenv` の出力を `~/.zprofile` に反映します。
+
+```sh
+brew shellenv
+```
+
+Apple Silicon の場合は通常 `/opt/homebrew/bin/brew shellenv`、Intel Mac の場合は通常 `/usr/local/bin/brew shellenv` になります。表示された内容を `~/.zprofile` に追記してから、現在のシェルにも反映してください。
+
+```sh
+eval "$($(command -v brew) shellenv)"
+```
+
+### 3. SSH キーを作成
+
+```sh
 ssh-keygen -t ed25519
 ```
-(ed25519ではダメなサービスがあれば修正する)
 
-# Setup Git & Github
-```
-brew install git
-```
+`ed25519` が使えないサービスがある場合は適宜変更してください。
 
-githubに公開鍵登録
-```
-cat $HOME/.ssh/id_ed25519.pub | pbcopy
-```
-鍵登録ページ: https://github.com/settings/keys
+### 4. Git / Ansible をインストール
 
-# Install Ansible
-```
-brew install ansible
+```sh
+brew install git ansible
 ```
 
-# apply Ansible
+### 5. GitHub に公開鍵を登録
+
+```sh
+pbcopy < "$HOME/.ssh/id_ed25519.pub"
 ```
-# 任意のディレクトリで
+
+鍵登録ページ: [https://github.com/settings/keys](https://github.com/settings/keys)
+
+## セットアップ実行
+
+```sh
 git clone git@github.com:takunoko/macOS_setup.git
 cd macOS_setup
 ansible-playbook setup.yml -i inventory
 ```
 
+## 補足
+
+- App Store アプリのインストールは `mas` を使います
+- `mas` の処理を通すには、App Store サインイン済みであることが必要です
+- インストール対象の一覧は `roles/*/vars/main.yml` で管理しています
