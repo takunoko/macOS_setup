@@ -1,11 +1,19 @@
+---
 - block:
- 
-  - name: homebrew cask install
-    homebrew_cask:
-      name: "{{ item.name }}"
-      state: "{{ item.state }}"
-      install_options: 'appdir=/Applications'
-    with_items: "{{ packages }}"
- 
+    - name: homebrew cask upgrade
+      environment:
+        HOMEBREW_CASK_OPTS: --appdir=/Applications
+      homebrew_cask:
+        upgrade_all: true
+        # Do not upgrade auto-updating casks implicitly. They may update outside
+        # Homebrew and can require interactive authentication or app restarts.
+        greedy: false
+
+    - name: homebrew cask install
+      homebrew_cask:
+        name: "{{ item.name }}"
+        state: "{{ item.state }}"
+        install_options: 'appdir=/Applications'
+      with_items: "{{ packages }}"
   tags:
     - homebrew_cask
