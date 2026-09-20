@@ -1,14 +1,14 @@
 apps:
-  - { name: "Keynote", id: "409183694" }
-  - { name: "Numbers", id: "409203825" }
-  - { name: "Pages", id: "409201541" }
-  - { name: "iMovie", id: "408981434" }
-  - { name: "Notion", id: "1232780281" }
-  - { name: "Yoink", id: "457622435" } # デスクトップ上のファイルの一次保存
-  - { name: "BetterSnapTool", id: "417375580" } # ウィンドウの整列
-  - { name: "RunCat", id: "1429033973" } # CPU使用率
-  # - { name: "MeetingBar", id: "1532419400" } # MTGの予定をバーに表示(アプリ内課金? があるため、ansibleからインストールできず。。)
+  - {name: "Keynote", id: "409183694"}
+  - {name: "Numbers", id: "409203825"}
+  - {name: "Pages", id: "409201541"}
+  - {name: "iMovie", id: "408981434"}
+  - {name: "Notion", id: "1232780281"}
+  - {name: "Yoink", id: "457622435"}  # デスクトップ上のファイルの一次保存
+  - {name: "BetterSnapTool", id: "417375580"}  # ウィンドウの整列
+  - {name: "RunCat", id: "1429033973"}  # CPU使用率
+  # - {name: "MeetingBar", id: "1532419400"}  # MTGの予定をバーに表示(アプリ内課金? があるため、ansibleからインストールできず。。)
   # MS office
-  - { name: "Excel", id: "586683407" }
-  - { name: "Word", id: "586447913" }
-  - { name: "PowerPoint", id: "586449534" }
+  - {name: "Excel", id: "586683407"}
+  - {name: "Word", id: "586447913"}
+  - {name: "PowerPoint", id: "586449534"}
