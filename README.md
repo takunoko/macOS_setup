@@ -74,6 +74,9 @@ cd macOS_setup
 ansible-playbook setup.yml -i inventory
 ```
 
+実行時には、Homebrew Cask で管理されている更新可能なアプリも更新します。
+自動更新機能を持つアプリは、予期しない再起動や認証を避けるため対象外です（`--greedy` は使用しません）。
+
 ## 補足
 
 - App Store アプリのインストールは `mas` を使います
