@@ -1,10 +1,9 @@
 packages:
-  - { name: firefox, state: present }
-  - { name: visual-studio-code, state: present }
-  - { name: google-cloud-sdk, state: present }  # google-cloud-sdk
-    # 仕事以外(開発系)
-  - { name: postman, state: present }
-    # 仕事以外(その他)
-  - { name: opera, state: present }
-  - { name: obs, state: present }
-
+  - {name: firefox, state: present}
+  - {name: visual-studio-code, state: present}
+  - {name: google-cloud-sdk, state: present}  # google-cloud-sdk
+  # 仕事以外(開発系)
+  - {name: postman, state: present}
+  # 仕事以外(その他)
+  - {name: opera, state: present}
+  - {name: obs, state: present}
