@@ -4,6 +4,18 @@
       name: mas
       state: present
 
+  - name: check App Store sign-in
+    command: mas account
+    register: mas_account
+    check_mode: no
+    changed_when: no
+    failed_when: no
+
+  - name: require App Store sign-in before installing mas apps
+    fail:
+      msg: App Storeにサインインした状態で `ansible-playbook setup.yml -i inventory --tags mas` を実行してください。
+    when: mas_account.rc != 0
+
   - name: fetch list
     command: mas list
     register: installed_list
@@ -16,4 +28,5 @@
     loop: "{{ apps }}"
 
   tags:
+    - never
     - mas

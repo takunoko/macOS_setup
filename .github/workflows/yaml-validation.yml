@@ -1,0 +1,39 @@
+name: YAML Validation
+
+on:
+  pull_request:
+    paths:
+      - "**/*.yml"
+      - "**/*.yaml"
+      - ".github/workflows/yaml-validation.yml"
+      - ".yamllint"
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.yml"
+      - "**/*.yaml"
+      - ".github/workflows/yaml-validation.yml"
+      - ".yamllint"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validation tools
+        run: python -m pip install ansible yamllint
+
+      - name: Run yamllint
+        run: yamllint .
+
+      - name: Run Ansible syntax check
+        run: ANSIBLE_LOCAL_TEMP=/tmp/ansible-local ansible-playbook --syntax-check setup.yml -i inventory
